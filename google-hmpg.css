@@ -75,7 +75,8 @@ img{
   height: 5.5vh;
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  position: relative;
+  
 }
 .search:hover{ 
   box-shadow: 0.5px 0.5px 5px silver;
@@ -92,12 +93,14 @@ img{
   margin-left: 1px;
   padding-top: 3px;
   padding-left: 1px;
+  z-index: 4;
 }
 .searchMich{
   width: 0.9rem;
   height: 1.3rem;
   margin-top: 12px;
   padding-right: 13px;
+  z-index: 4;
 }
 .searchIcon{
   width: 18px;
@@ -105,33 +108,46 @@ img{
   margin-top: 13px;
   padding-left: 7px;
   opacity: 0.5;
+  z-index: 4;
 }
 .dropdown{
-  position: relative;
-  display: inline-block;
-}  
-.drpdwn{
-  width: 36.5vw;
-  position: relative;
-  padding-top: 20px;
-  background-color: snow;
+  position: absolute;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+  width: 100%;
+  padding: 4rem 0% 1.5rem;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: white;
   border-radius: 20px;
-  border: 0.5px solid rgba(0, 0, 0, 0.11);
-  display: none;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+}  
+.suggestion{
+  width: 36.5vw;
+  display: flex;
+  justify-content: space-around;
+  padding: .5rem 1rem .5rem .07rem;
+  cursor: pointer;
 }
-.drpdwn a{
+.suggestion a{
 	background-color: white;
-	color: brown;
-	padding: 15px 16px;
 	text-decoration: none;
-	font-weight:bold;
-	display: block;	
+	font-weight: normal;
+  display: block;	
+  flex-grow: .95;
   }
-.search-cont:hover .drpdwn{
-  display: none;
-  
+.suggestion button{
+  background: none;
+  color: rgba(0, 0, 0, 0.7);
+  border: none;
+  font-weight: normal;
+}
+.search input:focus+.dropdown{
+  display: block;
+}
+.search input:focus{
+  outline: none;
 }
 .spacr{
   flex-wrap: nowrap;
