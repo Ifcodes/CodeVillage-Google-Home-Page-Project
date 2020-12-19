@@ -2,7 +2,7 @@
 A demo implementation of google homepage.
 
 ## Preview
-[view](https://fb-home-chlone-byifcodes.netlify.app)
+[view](https://dazzling-hamilton-8848e1.netlify.app)
 
 ## Prerequisite
 Most recent version of your browser. I recommend Chrome.
